@@ -1,0 +1,42 @@
+﻿@model SalesStore.Entities.ItemBrand
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemBrand</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.brandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arabicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arabicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.itemBrandCode }, new { @class = "btn btn-warning btn-large" }) 
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning btn-large" })
+</p>

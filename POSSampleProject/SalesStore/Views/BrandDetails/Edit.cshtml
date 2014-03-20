@@ -1,0 +1,58 @@
+﻿@model SalesStore.Entities.ItemBrand
+
+@{
+    ViewBag.Title = "Edit Brand";
+}
+
+<h2>Edit Brand</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ItemBrand</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.itemBrandCode)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.brandName, new { @class = "control-label col-md-2" })
+            <div class="btn3  border-rad">
+                @Html.TextBoxFor(model => model.brandName, new { @class = "btn3 border-rad" })
+                @Html.ValidationMessageFor(model => model.brandName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.arabicName, new { @class = "control-label col-md-2" })
+            <div class="btn3">
+                @Html.TextBoxFor(model => model.arabicName, new { @class = "btn3 border-rad" })
+                @Html.ValidationMessageFor(model => model.arabicName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isActive, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.isActive)
+                @Html.ValidationMessageFor(model => model.isActive)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning btn-large" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
